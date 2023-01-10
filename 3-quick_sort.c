@@ -4,6 +4,7 @@
  * @array: array to be sorted
  * @low: low index
  * @high: highest index
+ * @size: size of the array.
  *
  * Return: index for partition
  */
@@ -40,6 +41,7 @@ int partitioning(int *array, int low, int high, size_t size)
  * @array: array to sort
  * @low: lowest index
  * @high: highest index
+ * @size: size of the array
  */
 void quicksort(int *array, size_t low, size_t high, size_t size)
 {
@@ -49,7 +51,7 @@ void quicksort(int *array, size_t low, size_t high, size_t size)
 	{
 		partition = partitioning(array, low, high, size);
 		if (partition) /*condition to avoid an infinite loop*/
-			quicksort(array, low, partition -1, size);
+			quicksort(array, low, partition - 1, size);
 		quicksort(array, partition + 1, high, size);
 	}
 }
@@ -61,6 +63,8 @@ void quicksort(int *array, size_t low, size_t high, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
+	if (size <= 2)
+		return;
 	quicksort(array, 0, size - 1, size);
 }
 
