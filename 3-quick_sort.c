@@ -4,6 +4,7 @@
  * @array: array to be sorted
  * @low: low index
  * @high: highest index
+ * @size: size of the array
  *
  * Return: index for partition
  */
@@ -40,6 +41,7 @@ int partitioning(int *array, int low, int high, size_t size)
  * @array: array to sort
  * @low: lowest index
  * @high: highest index
+ * @size: size of the array
  */
 void quicksort(int *array, size_t low, size_t high, size_t size)
 {
